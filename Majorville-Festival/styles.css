@@ -1,0 +1,29 @@
+*{
+    background-color: rgb(82, 82, 82);
+    color:aliceblue;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+
+}
+
+.wq{
+    display: grid;
+    grid-template-columns: repeat(minmax(min()));
+    grid-template-areas:
+    "header"
+    "text"
+    ;
+}
+
+.title{
+    grid-area: header;
+    padding
+}
+.text1{
+    grid-area: text;
+}
+
