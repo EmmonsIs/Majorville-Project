@@ -16,21 +16,37 @@ body{
 }
 nav a:hover{
     color: red;
+    background-color: grey;
 }
 nav a{
     background-color: beige;
-    padding: 20px;
+    padding: 0.5rem;
     margin: 2px;
     border: 2px solid black;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1rem;
+    display:block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
 }
-nav{
-    display: grid;
+.nav{
+    /* display: grid; */
     grid-area: nav;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 1%;
+    /* grid-template-columns: repeat(3, 1fr);
+    padding: 1%; */
 }
+
+.nav ul {
+    grid-template-columns: 1fr;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
 header{
     grid-area: header;
     margin-left: 30%;
@@ -43,12 +59,12 @@ header{
 .container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-template-areas: 
     "header header"
     "nav nav"
     "event event"
-    "about img1"
+    "about about"
     "history img2"
     "footer logo";
 }
