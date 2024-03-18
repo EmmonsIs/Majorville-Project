@@ -3,12 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.img1, .img2{
+    width: 350px;
+    align-content: center;
+}
 body{
-    display: grid;
+    /* display: grid; */
     background-color: rgb(76, 29, 29);
     color:antiquewhite;
-    text-align: center;
+    /* text-align: center; */
+
 }
 nav a:hover{
     color: red;
@@ -23,10 +27,12 @@ nav a{
 }
 nav{
     display: grid;
+    grid-area: nav;
     grid-template-columns: repeat(3, 1fr);
     padding: 1%;
 }
 header{
+    grid-area: header;
     margin-left: 30%;
     margin-right: 30%;
     background-color: grey;
@@ -36,15 +42,15 @@ header{
 }
 .container{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, fit-content);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
     grid-template-areas: 
-    "event"
-    "img1"
-    "about"
-    "img2"
-    "history"
-    ;
+    "header header"
+    "nav nav"
+    "event event"
+    "about img1"
+    "history img2"
+    "footer logo";
 }
 .img1{
     grid-area: img1;
@@ -58,19 +64,33 @@ header{
 }
 .event{
     grid-area: event;
-    height: fit-content;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .about{
-    grid-area: about;
     height: fit-content;
+    grid-area: about;
 }
 .history{
     grid-area: history;
     height: fit-content;
 }
+footer{
+    padding-top: 5%;
+    grid-area: footer;
+}
 .logo{
     max-width: 25%;
 }
+.logo2 img{
+    width: 5%;
+    margin-left: 94%;
+}
+.logo2{
+    grid-area: logo;
+    margin-top: 4%;
+}
+
 @media(width < 650px){
     header{
         font-size: 100%;
