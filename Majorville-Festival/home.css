@@ -3,120 +3,166 @@
     padding: 0;
     box-sizing: border-box;
 }
-.img1, .img2{
-    width: 350px;
-    align-content: center;
+:root{
+    font-size: 16px;
 }
 body{
-    /* display: grid; */
-    background-color: rgb(76, 29, 29);
-    color:antiquewhite;
-    /* text-align: center; */
-
+    color: antiquewhite;
+    line-height: 1.5;
+    /* max-width: 90vw; */
+    margin: 0 auto;
 }
-nav a:hover{
-    color: red;
-    background-color: grey;
+.container{
+    display: grid;
+    min-height: 100vh;
+    max-height: 100dvh;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 250px auto 1fr 1fr 50px;
+    grid-template-areas: 
+    "header header header header header header header header"
+    "nav nav nav nav nav nav nav nav"
+    "history history history media media media media about"
+    "history history history media media media media about"
+    "footer footer footer footer footer footer footer footer";
 }
 nav a{
     background-color: beige;
-    padding: 0.5rem;
+    padding: 20px;
     margin: 2px;
     border: 2px solid black;
     text-decoration: none;
-    font-size: 1rem;
-    display:block;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-size: 25px;
 }
 .nav{
-    /* display: grid; */
     grid-area: nav;
-    /* grid-template-columns: repeat(3, 1fr);
-    padding: 1%; */
+    padding: 0;
 }
 
+/* desktop veiw nav bar */
+
 .nav ul {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
-
+.nav a{
+    background-color: grey;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.75rem;
+}
+nav a:hover{
+    color: orangered;
+    background-color: blanchedalmond;
+   
+}
 
 
 header{
-    grid-area: header;
-    margin-left: 30%;
-    margin-right: 30%;
-    background-color: grey;
-    margin-top: 2%;
-    padding: 1%;
-    font-size: 200%;
-}
-.container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-areas: 
-    "header header"
-    "nav nav"
-    "event event"
-    "about about"
-    "history img2"
-    "footer logo";
+    grid-area: header;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+    "logo logo-text";
+    background-color: grey;
+    font-size: 3.5rem;
 }
-.img1{
-    grid-area: img1;
-    height: fit-content;
-    align-content: center;
+
+.logo{
+    display: grid;
+    grid-area: logo;
+    align-items: center;
+    padding: 20px;
 }
-.img2{
-    grid-area: img2;
-    height: fit-content;
-    align-content: center;
+.media{
+    display: grid;
+    grid-area: media;
+    background-color: rgb(80, 11, 11);
+    padding: 20px;
+    font-size: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows:auto auto;
+    grid-template-areas:
+    "media-image"
+    "media-content";
 }
-.event{
-    grid-area: event;
-    padding-top: 5%;
-    padding-bottom: 5%;
+.media-content{
+    grid-area: media-content;
+    padding: 10px;
+    justify-self: start;
+    align-self: start;
+}
+.media-content p:nth-child(3){
+    margin-top: 20px;
+}
+.media-image{
+    grid-area: media-image;
+    padding-left: 10px;
+    justify-self: start;
+    align-self: center;
+}
+img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .about{
-    height: fit-content;
     grid-area: about;
+    background-color: rgb(80, 11, 11);
+    padding: 20px;
+    font-size: 20px;
 }
 .history{
     grid-area: history;
-    height: fit-content;
+    background-color: rgb(80, 11, 11);
+    padding: 20px;
+    font-size: 20px;
 }
-footer{
-    padding-top: 5%;
+.footer{
+    display: grid;
+    justify-content: center;
+    align-content: center;
     grid-area: footer;
-}
-.logo{
-    max-width: 25%;
-}
-.logo2 img{
-    width: 5%;
-    margin-left: 94%;
-}
-.logo2{
-    grid-area: logo;
-    margin-top: 4%;
+
+    background-color: rgb(51, 7, 7);
+    padding: 20px;
+    text-align: center;
 }
 
-@media(width < 650px){
-    header{
-        font-size: 100%;
-    }
-    .img1, .img2{
-        max-width: 75%;
-        align-content: center;
-    }
-    p{
-        padding: 2% 10% 5% 5%;
+@media (width < 950px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
 
+        grid-template-areas:
+        "header"
+        "nav"
+        "history"
+        "media"
+        "about"
+        "footer";
+    }
+
+    .nav ul{
+        grid-template-columns: 1fr;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .media{
+        display: grid;
+        grid-area: media;
+
+        padding: 20px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "media-image"
+        "media-content";
     }
 }
