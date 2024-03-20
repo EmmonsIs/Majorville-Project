@@ -65,8 +65,8 @@ header{
 
 } 
 .card img {
-    width: 120px;
-    height: 120px ;
+    width: 520px;
+    height: 250px ;
     object-fit: fill;
     border: 2px solid black;
 
@@ -94,7 +94,41 @@ header{
 footer{
     background-color: rgb(51, 7, 7);
 }
-
+.c4 p{
+    padding: 30px 20px 20px 20px;
+    font-size: 15px;
+    
+}
+.c4 h2{
+    margin-top: 10px;
+    font-size: 40px;
+}
+.c3 p{
+    padding: 10px 20px 20px 20px;
+    font-size: 20px;
+    
+}
+.c3 h2{
+    margin-top: 10px;
+    font-size: 40px;
+}
+.c2 p{
+    padding: 30px 20px 20px 20px;
+    font-size: 25px;
+    
+}
+.c2 h2{
+    margin-top: 10px;
+    font-size: 40px;
+}
+.c1 p{
+    padding: 30px 20px 20px 20px;
+    font-size: 25px;
+}
+.c1 h2{
+    margin-top: 10px;
+    font-size: 25px;
+}
 @media (width < 550px){
     .cards{
         margin: 1em 2em;
